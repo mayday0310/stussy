@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package grpc;
+
+option java_package = "com.zk.google.grpc";
+option java_outer_classname = "HelloWorldServiceProto";
+option java_multiple_files = true;
+
+service HelloWorldRpcService {
+  rpc SayHello (HelloWorldRequest) returns (HelloWorldResponse) {}
+}
+
+message HelloWorldRequest {
+  string request = 1;
+}
+
+message HelloWorldResponse {
+  string response = 1;
+}

@@ -1,0 +1,31 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+.git/
+.idea/
+target/
+logs/
+.settings/
+.classpath
+.project
+.springBeans
+*.log
+*.lck
+*.epoch
+*.iml
+.mvn/
+mvnw
+mvnw.cmd
+generated/
+.DS_Store
+D/\workspace\loghome

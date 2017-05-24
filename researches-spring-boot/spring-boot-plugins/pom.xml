@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>researches-spring-boot</artifactId>
+        <groupId>com.zk</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>spring-boot-plugins</artifactId>
+
+    <build>
+        <plugins>
+            <!-- https://github.com/acanda/spring-banner-plugin -->
+            <plugin>
+                <groupId>ch.acanda.maven</groupId>
+                <artifactId>spring-banner-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-spring-banner</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <text>${project.name}</text>
+                    <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                    <filename>banner.txt</filename>
+                    <includeInfo>true</includeInfo>
+                    <info>--------------------  Version: 1.0 ,Active Profiles: Default --------------------</info>
+                    <color>default</color>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

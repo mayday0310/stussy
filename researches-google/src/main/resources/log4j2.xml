@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="1800">
+
+    <Properties>
+        <Property name="LogHome">D:\workspace\loghome</Property>
+        <Property name="LogPattern">%highlight{%d %p %C [%t] %m%n}{FATAL=red blink, ERROR=red, WARN=yellow bold, DEBUG=green bold, TRACE=blue}</Property>
+    </Properties>
+
+    <Appenders>
+
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>${LogPattern}</Pattern>
+            </PatternLayout>
+        </Console>
+
+        <RollingFile name="FileSystem" fileName="${LogHome}/researches-google.log" filePattern="${LogHome}/$${date:yyyy-MM}/task-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>${LogPattern}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="5 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+
+</Configuration>
